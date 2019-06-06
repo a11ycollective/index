@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+  <title>Poetry Assessment - O Captain, My Captain</title>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,7 +37,7 @@
 <body>
     <main role="main">
 
-              <a href="#assessment" class="alert alert-warning hidden" id="validator" aria-hidden="true" role="alert">Please provide answer.</a>
+              <a href="#answerField" class="alert alert-danger hidden" id="validator" aria-hidden="true" role="alert">Please provide answer.</a>
   
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <a href="#assessment" class="sr-only sr-only-focusable">Skip to assessment</a>
@@ -147,10 +148,9 @@ From fearful trip the victor ship comes in with object won;
   //elements in requiredIds array of id values
   function setRequired() {
     if (formData) {
-
-      alert("test");
-      sessionStorage.removeItem('fail');
       document.getElementById("validator").setAttribute("aria-hidden", "false");
+      document.getElementById("validator").className = document.getElementById("validator").className.replace(/\bhidden\b/g, "");
+      sessionStorage.removeItem('fail');
       
     }
   }
