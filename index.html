@@ -126,21 +126,22 @@ From fearful trip the victor ship comes in with object won;
 
 <script type="text/javascript">
   //<![CDATA[
-
+  var formData = document.sessionStorage["myCat"];
   // array or ids on the required fields on this page
-  var requiredIds = new Array("answerField");
+  
 
   // function that is run after the page has loaded to set the aria-required property on each of the
   //elements in requiredIds array of id values
   function setRequired() {
-    if (requiredIds) {
+    if (formData) {
       var field;
       for (var i = 0; i < requiredIds.length; i++) {
         field = document.getElementById(requiredIds[i]);
         field.setAttribute("aria-required", "true");
-      
+      alert("test");
       }
-      alert("i am");
+                
+      
     }
   }
   window.onload = setRequired;
@@ -162,8 +163,10 @@ From fearful trip the victor ship comes in with object won;
       var validation = Array.prototype.filter.call(forms, function (form) {
         form.addEventListener('submit', function (event) {
           if (form.checkValidity() === false) {
-
-           
+            event.preventDefault();
+            event.stopPropagation();
+            sessionStorage.setItem('myCat', 'Tom');
+            document.location.href = 'index.html';
             
           }
    
