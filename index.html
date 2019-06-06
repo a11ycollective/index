@@ -25,14 +25,24 @@
   clip: auto;
 }
 
+.hidden {
+
+  display: none;
+}
+
 
   </style>
 </head>
 <body>
     <main role="main">
+
+              <a href="#assessment" class="alert alert-warning hidden" id="validator" aria-hidden="true" role="alert">Please provide answer.</a>
+  
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <a href="#assessment" class="sr-only sr-only-focusable">Skip to assessment</a>
       <!-- Main jumbotron for a primary marketing message or call to action -->
+
+
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">O Captain! My Captain!</h1>
@@ -124,6 +134,8 @@ From fearful trip the victor ship comes in with object won;
   <button class="btn btn-primary" type="submit" aria-label="Submit Answer">Submit Answer</button>
 </form>
 
+
+
 <script type="text/javascript">
   //<![CDATA[
 
@@ -138,7 +150,7 @@ From fearful trip the victor ship comes in with object won;
 
       alert("test");
       sessionStorage.removeItem('fail');
-                
+      document.getElementById("validator").setAttribute("aria-hidden", "false");
       
     }
   }
